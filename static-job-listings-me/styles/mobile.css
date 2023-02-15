@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: myfont500;
+}
+
+:root {
+    --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
+    --Light-Grayish-Cyan-Background: hsl(180, 52%, 96%);
+    --Light-Grayish-Cyan-Filter-Tablets: hsl(180, 31%, 95%);
+    --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+    --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+}
+
+@font-face {
+    font-family: myfont500;
+    src: url(../fonts/LeagueSpartan-Medium.ttf);
+}
+
+@font-face {
+    font-family: myfont700;
+    src: url(../fonts/LeagueSpartan-Bold.ttf);
+}
+
+header {
+    background: var(--Desaturated-Dark-Cyan) url("../images/bg-header-mobile.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 6rem;
+    height: 25vh;
+}
+
+.filtered-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 90vw;
+    height: 40%;
+    margin: auto;
+    transform: translatey(125px);
+    border-radius: .5rem;
+    padding: 0 .6rem;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.filtered-container.active {
+    opacity: 1;
+}
+
+.filtered-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.filtered-content > span {
+    background: linear-gradient(90deg, var(--Light-Grayish-Cyan-Background) 70%, var(--Desaturated-Dark-Cyan) 30%);
+    display: inline-block;
+    padding: .3rem;
+    color: var(--Desaturated-Dark-Cyan);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: .2rem;
+    margin: .3rem .3rem 0;
+}
+
+.filtered-content > span:hover {
+    background: linear-gradient(90deg, var(--Light-Grayish-Cyan-Background) 70%, black 30%);
+    cursor: pointer;
+}
+
+.filtered-content img {
+    margin-left: 1rem;
+}
+
+.filter-clear > span {
+    color: var(--Desaturated-Dark-Cyan);
+}
+
+.filter-clear > span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+body {
+    background: var(--Light-Grayish-Cyan-Background);
+}
+
+h5, button {
+    font-size: 1rem;
+    font-family: myfont700;
+}
+
+.dark-cyan:hover {
+    cursor: pointer;
+    background-color: var(--Desaturated-Dark-Cyan);
+    color: white;
+}
+
+.dark-cyan {
+    color: var(--Desaturated-Dark-Cyan);
+}
+
+.description p {
+    font-family: myfont500;
+    color: var(--Dark-Grayish-Cyan);
+}
+
+.avatar {
+    width: 2.5rem;
+    position: absolute;
+    top: -25px;
+}
+
+.card {
+    position: relative;
+    width: 85vw;
+    background-color: white;
+    height: 20%;
+    margin: auto;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+section {
+    margin-bottom: 5rem;
+}
+
+.first-part {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.first-part h5 {
+    margin-right: .5rem;
+}
+
+.feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: myfont700;
+    font-size: .8rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.feature p:first-child {
+    background: var(--Desaturated-Dark-Cyan);
+    padding: .4rem .5rem;
+    border-radius: .9rem;
+    text-align: center;
+    margin-right: .3rem;
+}
+
+.feature p:last-child {
+    background: var(--Very-Dark-Grayish-Cyan);
+    padding: .4rem .5rem;
+    border-radius: .9rem;
+    text-align: center;
+}
+
+.description {
+    display: flex;
+    margin: 1rem 0;
+}
+
+/* .description p:first-child, .description p:nth-child(2) {
+    margin-right: .6rem;
+} */
+
+.description p:first-child::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background-color:  var(--Dark-Grayish-Cyan);
+    display: inline-block;
+    margin: 0 8px 2.5px;
+}
+
+.description p:nth-child(2)::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background-color:  var(--Dark-Grayish-Cyan);
+    display: inline-block;
+    margin: 0 8px 2.5px;  
+}
+
+.skills {
+    margin-top: 1rem;
+}
+
+.skills button{
+    border: none;
+    background: var(--Light-Grayish-Cyan-Background);
+    padding: .5rem;
+    margin: .2rem;
+    border-radius: .3rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .avatar {
+        position: static;
+        width: 5.5rem;
+        margin-right: 1.2rem;
+    }
+
+    .card {
+        position: static;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .skills {
+        text-align: right;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
